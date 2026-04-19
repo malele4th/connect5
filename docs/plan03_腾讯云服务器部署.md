@@ -92,7 +92,7 @@ npm run build
 
 ## 6. Nginx 配置要点
 
-模板见 [`deploy/nginx-connect5.conf`](../deploy/nginx-connect5.conf)（站点 **`/web/connect5/`**，可选根路径 **`/` → 302 → `/web/connect5/`**）。
+模板见 [`deploy/nginx-connect5.conf`](../deploy/nginx-connect5.conf)（站点 **`/web/connect5/`**；根路径 **`/`** 不配置跳转，留给同机其他服务使用）。
 
 - 静态：`location /web/connect5/` + **`alias .../dist/`** + **`try_files`** 回退到 **`/web/connect5/index.html`**。
 - **WebSocket**：对外路径 **`/web/connect5/socket`**，`rewrite` 为后端 **`/socket`**（与 [`server/index.ts`](../server/index.ts) 中 `path: '/socket'` 一致）：
@@ -133,7 +133,7 @@ location /web/connect5/socket {
 ## 9. 验证清单
 
 - `systemctl status connect5-ws` 为 active。
-- `curl -I http://127.0.0.1/web/connect5/` 返回 200；`curl -I http://127.0.0.1/` 若为 302 到 `/web/connect5/` 属正常。
+- `curl -I http://127.0.0.1/web/connect5/` 返回 200；`curl -I http://127.0.0.1/` 不再 302 到五子棋（可能为 404 或由其他 `server` 处理，属预期）。
 - 浏览器联机模式：建房/加入无报错（开发者工具 Network → WS 应连到预期 URL）。
 
 ---

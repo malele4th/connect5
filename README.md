@@ -1,6 +1,6 @@
 # 这是一个完全由 cursor auto模式的agent开发的五子棋游戏
 
-部署后访问：**`http://<服务器IP>/web/connect5/`**（根路径 `/` 会 302 到此处）。开发：`npm run dev` 后打开 **`http://localhost:8686/web/connect5/`**。
+部署后请用完整路径访问：**`http://<服务器IP>/web/connect5/`**（根路径 `/` 不再自动跳转到五子棋，便于同机部署其他站点）。开发：`npm run dev` 后打开 **`http://localhost:8686/web/connect5/`**。
 
 ---
 
