@@ -1,6 +1,6 @@
 # 这是一个完全由 cursor auto模式的agent开发的五子棋游戏
 
-部署后请用完整路径访问：**`http://<服务器IP>/web/connect5/`**（根路径 `/` 不再自动跳转到五子棋，便于同机部署其他站点）。开发：`npm run dev` 后打开 **`http://localhost:8686/web/connect5/`**。
+部署后请用完整路径访问：**`http://<服务器IP>/web/connect5/`**。若同机已用 **my_web** 的 [`deploy/install-server.sh`](../my_web/deploy/install-server.sh) 合并 80 端口配置，根路径 **`/`** 为个人站，五子棋仍在 **`/web/connect5/`**；此时请 **勿** 再启用独立的 `sites-enabled/connect5`（`connect5/deploy/install-server.sh` 会自动跳过 Nginx 站点）。开发：`npm run dev` 后打开 **`http://localhost:8686/web/connect5/`**。
 
 ---
 
